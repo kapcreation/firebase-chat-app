@@ -52,6 +52,7 @@ export const sendMessage = async (roomId, user, text) => {
   try {
     await addDoc(collection(db, 'chat-rooms', roomId, 'messages'), {
       uid: user.uid,
+      photoURL: user.photoURL,
       displayName: user.displayName,
       text: text.trim(),
       timestamp: serverTimestamp(),

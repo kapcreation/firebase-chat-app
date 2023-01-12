@@ -1,5 +1,24 @@
 .landing {
-  .chat-room-list {
+  
+  > .join-room-input {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 20px;
+
+    > input {
+      flex: 1;
+      background-color: var(--color-gray);
+      color: white;
+      padding: 5px;
+    }
+    > button {
+      background-color: var(--color-blue);
+      color: white;
+      padding: 5px;
+      min-width: 75px;
+    }
+  }
+  > .chat-room-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2px;

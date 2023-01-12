@@ -11,12 +11,21 @@ const ChatRoom = () => {
   const room = chatRooms.find((x) => x.id === params.id);
   if (!room) {
     // TODO: 404
+    return (
+      <div>
+        👻 Room not found!
+        <Link to="/">⬅️ Back</Link>
+      </div>
+    )
   }
 
   return (
   <div className='chat-room'>
     <div className="top">
-      <h3>{room.title}</h3>
+      <div className="info">
+        <h3>{room.title}</h3>
+        <p>Room id: {room.id}</p>
+      </div>
       <Link to="/">⬅️ Back</Link>
     </div>
     <div className="messages-container">

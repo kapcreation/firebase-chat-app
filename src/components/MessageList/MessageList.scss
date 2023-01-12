@@ -9,19 +9,33 @@
 }
 
 .message {
-  padding: 8px 16px;
   margin-bottom: 8px;
-  background: var(--color-gray);
-  border-radius: var(--border-radius);
-  text-align: left;
-}
+  display: flex;
+  gap: 5px;
 
-.own-message {
-  background: var(--color-blue);
-  align-self: flex-end;
-  text-align: right;
-}
+  > img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+  > .text {
+    padding: 8px 16px;
+    background: var(--color-gray);
+    border-radius: 0 10px 10px 10px;
 
-.sender {
-  margin-bottom: 8px;
+    > .sender {
+      margin-bottom: 8px;
+    }
+  }
+
+  &.own-message {
+    flex-direction: row-reverse;
+    align-self: flex-end;
+
+    > .text {
+      background: var(--color-blue);
+      border-radius: 10px 0 10px 10px;
+    }
+  }
 }
